@@ -1,6 +1,7 @@
 import { useState } from 'react/cjs/react.development';
 import './App.scss';
 import addTask from "./assets/images/add-task.svg";
+import Aside from './components/Aside/Aside';
 import CreateFolderPopup from './components/CreateFolderPopup/CreateFolderPopup';
 import TasksForm from './components/TasksForm/TasksForm';
 import TasksList from './components/TasksList/TasksList';
@@ -20,6 +21,9 @@ function App() {
 
   return (
     <div className="app">
+      <div className="app__left">
+        <Aside></Aside>
+      </div>
       <div className="app__right">
         <TasksList tasks={tasks} deleteTask={deleteTask}></TasksList>
 

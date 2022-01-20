@@ -1,6 +1,10 @@
 .app {
+  display: flex;
   font-family: "Rubik", Arial, Helvetica, sans-serif;
-  padding: 40px 20px;
+  height: 100vh;
+  &__left {
+    flex-basis: 200px;
+  }
   &__right {
     max-width: 420px;
   }
