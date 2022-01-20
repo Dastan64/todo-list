@@ -1,0 +1,38 @@
+.app {
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  padding: 40px 20px;
+  &__right {
+    max-width: 420px;
+  }
+  &__heading {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 32px;
+    line-height: 39px;
+    font-weight: bold;
+  }
+  &__form {
+    margin-top: 20px;
+  }
+  &__tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  &__add-task {
+    &--hidden {
+      display: none;
+    }
+    display: flex;
+    gap: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15px;
+    color: #b4b4b4;
+    cursor: pointer;
+    img {
+      padding-left: 1px;
+    }
+  }
+}

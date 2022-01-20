@@ -1,0 +1,42 @@
+.check-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__check {
+        display: block;
+    }
+    &__delete-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        svg path {
+            transition: fill 0.2s ease-in;
+        }
+        &:hover path {
+            fill: red;
+        }
+    }
+}
+
+.check {
+    padding-left: 1.7em;
+    &__input {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        &:checked + .check__box {
+            background-image: url("../../assets/images/checkbox-checked.svg");
+        }
+    }
+    &__box {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        margin-left: -1.7em;
+        background-image: url("../../assets/images/checkbox-unchecked.svg");
+    }
+}
