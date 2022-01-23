@@ -20,22 +20,23 @@ function App() {
 
   return (
     <div className='app'>
-      <div className='app__left'>
-        <Aside></Aside>
-      </div>
-      <div className='app__right'>
-        <TasksList tasks={tasks} deleteTask={deleteTask}></TasksList>
-
-        <div
-          className={`app__add-task ${isOpen ? 'app__add-task--hidden' : ''}`}
-          onClick={() => setIsOpen(true)}>
-          <img src={addTask} alt='' />
-          <p>Новая задача</p>
+      <div className='app__container'>
+        <div className='app__left'>
+          <Aside></Aside>
         </div>
-        <TasksForm
-          createTask={createTask}
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}></TasksForm>
+        <div className='app__right'>
+          <TasksList tasks={tasks} deleteTask={deleteTask}></TasksList>
+          <div
+            className={`app__add-task ${isOpen ? 'app__add-task--hidden' : ''}`}
+            onClick={() => setIsOpen(true)}>
+            <img src={addTask} alt='' />
+            <p>Новая задача</p>
+          </div>
+          <TasksForm
+            createTask={createTask}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}></TasksForm>
+        </div>
       </div>
     </div>
   );

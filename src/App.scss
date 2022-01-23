@@ -1,11 +1,14 @@
 .app {
-  display: flex;
   font-family: "Rubik", Arial, Helvetica, sans-serif;
-  height: 100vh;
+  &__container {
+    display: flex;
+    height: 100vh;
+  }
   &__left {
     flex-basis: 200px;
   }
   &__right {
+    padding: 40px 0 0 20px;
     max-width: 420px;
   }
   &__heading {
@@ -26,6 +29,7 @@
     }
     display: flex;
     gap: 10px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.15px;
     color: #b4b4b4;

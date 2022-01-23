@@ -1,10 +1,11 @@
 import { useState } from 'react/cjs/react.development';
 import { v4 as uuidv4 } from 'uuid';
+import './Aside.scss';
 
 import FolderItem from '../FolderItem/FolderItem';
 import CreateFolderPopup from '../CreateFolderPopup/CreateFolderPopup';
 import addTask from '../../assets/images/add-task.svg';
-import './Aside.scss';
+import allTasks from '../../assets/images/all-tasks.svg';
 import FoldersList from '../FoldersList/FoldersList';
 
 function Aside() {
@@ -62,9 +63,18 @@ function Aside() {
         selectedColor={selectedColor}></FolderItem>
     );
   });
+
   return (
     <aside className='aside'>
-      <FoldersList foldersList={foldersList} />
+      {folders.length > 0 && (
+        <>
+          <button className='aside__top-btn' title='Все задачи'>
+            <img src={allTasks} alt='' />
+            Все задачи
+          </button>
+          <FoldersList foldersList={foldersList} />
+        </>
+      )}
       <button
         className='aside__btn'
         type='button'
