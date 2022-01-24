@@ -1,9 +1,7 @@
-import "./FolderHeading.scss";
+import './FolderHeading.scss';
 
-function FolderHeading({ title }) {
-    return (
-        <h1 className='heading app__heading'>{title}</h1>
-    );
+function FolderHeading() {
+  return <h1 className='heading app__heading'>Заголовок</h1>;
 }
 
 export default FolderHeading;

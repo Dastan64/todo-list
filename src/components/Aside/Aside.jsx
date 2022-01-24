@@ -8,9 +8,8 @@ import addTask from '../../assets/images/add-task.svg';
 import allTasks from '../../assets/images/all-tasks.svg';
 import FoldersList from '../FoldersList/FoldersList';
 
-function Aside() {
+function Aside({ folders, setFolders }) {
   const [isPopupActive, setIsPopupActive] = useState(false);
-  const [folders, setFolders] = useState([]);
   const [selectedColor, setSelectedColor] = useState('#C9D1D3');
   const [colors, setColors] = useState([
     {

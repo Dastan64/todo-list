@@ -3,10 +3,12 @@ import './App.scss';
 import addTask from './assets/images/add-task.svg';
 import Aside from './components/Aside/Aside';
 import TasksForm from './components/TasksForm/TasksForm';
+import Folder from './components/Folder/Folder';
 import TasksList from './components/TasksList/TasksList';
 
 function App() {
   const [title, setTitle] = useState('');
+  const [folders, setFolders] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [tasks, setTasks] = useState([]);
 
@@ -22,10 +24,13 @@ function App() {
     <div className='app'>
       <div className='app__container'>
         <div className='app__left'>
-          <Aside></Aside>
+          <Aside folders={folders} setFolders={setFolders}></Aside>
         </div>
         <div className='app__right'>
-          <TasksList tasks={tasks} deleteTask={deleteTask}></TasksList>
+          {folders.map((folder) => (
+            <Folder folder={folder} key={folder.id} />
+          ))}
+          {/* <TasksList tasks={tasks} deleteTask={deleteTask}></TasksList>
           <div
             className={`app__add-task ${isOpen ? 'app__add-task--hidden' : ''}`}
             onClick={() => setIsOpen(true)}>
@@ -35,7 +40,7 @@ function App() {
           <TasksForm
             createTask={createTask}
             isOpen={isOpen}
-            setIsOpen={setIsOpen}></TasksForm>
+            setIsOpen={setIsOpen}></TasksForm> */}
         </div>
       </div>
     </div>
