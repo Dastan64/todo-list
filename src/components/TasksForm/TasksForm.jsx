@@ -1,13 +1,9 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Button from '../Button/Button';
 import './TasksForm.scss';
 
-function TasksForm({ createTask, isOpen, setIsOpen }) {
-  const [task, setTask] = useState({
-    text: '',
-  });
-
+function TasksForm({ task, setTask, createTask, isOpen, setIsOpen }) {
   function handleChange(e) {
     setTask({ ...task, text: e.target.value });
   }
@@ -16,6 +12,7 @@ function TasksForm({ createTask, isOpen, setIsOpen }) {
     e.preventDefault();
     const newTask = {
       ...task,
+      completed: false,
       id: uuidv4(),
     };
     createTask(newTask);
@@ -32,7 +29,7 @@ function TasksForm({ createTask, isOpen, setIsOpen }) {
   }
   return (
     <form
-      className={`form  ${isOpen ? '' : 'form--hidden'} app__form`}
+      className={`form ${isOpen ? '' : 'form--hidden'} app__form`}
       onSubmit={handleSubmit}>
       <input
         type='text'

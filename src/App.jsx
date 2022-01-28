@@ -27,9 +27,11 @@ function App() {
           <Aside folders={folders} setFolders={setFolders}></Aside>
         </div>
         <div className='app__right'>
-          {folders.map((folder) => (
-            <Folder folder={folder} key={folder.id} />
-          ))}
+          {folders.length > 0 ? (
+            folders.map((folder) => <Folder folder={folder} key={folder.id} />)
+          ) : (
+            <h2 style={{ color: '#cdd1d3' }}>Задачи отсутствуют</h2>
+          )}
           {/* <TasksList tasks={tasks} deleteTask={deleteTask}></TasksList>
           <div
             className={`app__add-task ${isOpen ? 'app__add-task--hidden' : ''}`}

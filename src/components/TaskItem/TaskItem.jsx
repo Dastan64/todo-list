@@ -1,14 +1,22 @@
 import './TaskItem.scss';
 
-function TaskItem({ task, deleteTask }) {
+function TaskItem({ task, deleteTask, completeTask }) {
+  const { text, completed } = task;
   return (
     <>
       {task && (
         <div className='check-container'>
           <label className='check check-container__check'>
-            <input className='check__input' type='checkbox' />
+            <input
+              className='check__input'
+              type='checkbox'
+              checked={completed}
+              onChange={() => {
+                completeTask(task.id);
+              }}
+            />
             <span className='check__box'></span>
-            {task.text}
+            {text}
           </label>
           <button
             className='check-container__delete-btn'
