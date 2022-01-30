@@ -16,11 +16,11 @@ function Folder({ folder }) {
     setTasks([...tasks, newTask]);
   }
 
-  function completeTask(id) {
+  function completeTask(taskId) {
     setTasks(
-      tasks.map((t) => {
-        return t.id === id ? { ...task, completed: true } : { ...task };
-      })
+      tasks.map((t) =>
+        t.id === taskId ? { ...t, completed: !t.completed } : { ...t }
+      )
     );
   }
 
