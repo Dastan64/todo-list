@@ -1,4 +1,6 @@
 import { useState } from 'react/cjs/react.development';
+import { Link } from 'react-router-dom';
+
 import { v4 as uuidv4 } from 'uuid';
 import './Aside.scss';
 
@@ -67,10 +69,10 @@ function Aside({ folders, setFolders }) {
     <aside className='aside'>
       {folders.length > 0 && (
         <>
-          <button className='aside__top-btn' title='Все задачи'>
+          <Link to='/' className='aside__top-link' title='Все задачи'>
             <img src={allTasks} alt='' />
             Все задачи
-          </button>
+          </Link>
           <FoldersList foldersList={foldersList} />
         </>
       )}

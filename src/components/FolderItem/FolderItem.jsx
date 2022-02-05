@@ -1,4 +1,5 @@
 import { useState } from 'react/cjs/react.development';
+import { Link } from 'react-router-dom';
 import './FolderItem.scss';
 
 function FolderItem({ folder, selectedColor }) {
@@ -10,9 +11,9 @@ function FolderItem({ folder, selectedColor }) {
       <span
         style={{ backgroundColor: color }}
         className='folder-item__circle'></span>
-      <a className='folder-item__link' href='https://www.yandex.ru'>
+      <Link className='folder-item__link' to={'/' + folder.id}>
         <p className='folder-item__text'>{name}</p>
-      </a>
+      </Link>
     </li>
   );
 }
