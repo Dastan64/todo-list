@@ -32,13 +32,23 @@
         gap: 5px;
         margin-top: 15px;
     }
-    &__color-option {
+    &__check-input {
+        position: absolute;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: 0;
+        &:focus-visible + .popup__check-box {
+            border: 2px solid #525252;
+        }
+    }
+    &__check-box {
         display: block;
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        cursor: pointer;
-        &--active {
+        &--active,
+        &:focus-visible {
             border: 2px solid #525252;
         }
     }

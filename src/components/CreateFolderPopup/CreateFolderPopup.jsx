@@ -38,15 +38,22 @@ function CreateFolderPopup({
   }
 
   const colorsList = colors.map((color) => (
-    <span
-      className={`popup__color-option ${
-        color.color === selectedColor ? 'popup__color-option--active' : ''
-      }`}
-      key={color.id}
-      style={{ backgroundColor: `${color.color}` }}
-      onClick={() => {
-        changeSelectedColor(color.color);
-      }}></span>
+    <div className='popup__check' key={color.id}>
+      <label className='popup__check-label'>
+        <input
+          type='checkbox'
+          className='popup__check-input'
+          onChange={() => {
+            changeSelectedColor(color.color);
+          }}
+        />
+        <span
+          className={`popup__check-box ${
+            color.color === selectedColor ? 'popup__check-box--active' : ''
+          }`}
+          style={{ backgroundColor: `${color.color}` }}></span>
+      </label>
+    </div>
   ));
 
   return (
