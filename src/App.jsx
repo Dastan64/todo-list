@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { useState } from 'react/cjs/react.development';
 import './App.scss';
-import AllFolders from './components/AllFolders.jsx/AllFolders';
+import AllFolders from './components/AllFolders/AllFolders';
 import Aside from './components/Aside/Aside';
 import Folder from './components/Folder/Folder';
 
