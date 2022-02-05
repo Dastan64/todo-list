@@ -31,6 +31,12 @@ function CreateFolderPopup({
     });
   }
 
+  function onKeyDown(e) {
+    if (e.code === 'Enter') {
+      addFolder();
+    }
+  }
+
   const colorsList = colors.map((color) => (
     <span
       className={`popup__color-option ${
@@ -44,7 +50,9 @@ function CreateFolderPopup({
   ));
 
   return (
-    <div className={`popup ${isPopupActive ? '' : 'popup--hidden'}`}>
+    <div
+      className={`popup ${isPopupActive ? '' : 'popup--hidden'}`}
+      onKeyDown={onKeyDown}>
       <div className='popup__content'>
         <input
           type='text'
