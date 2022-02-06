@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './CreateFolderPopup.scss';
 import Button from '../Button/Button';
@@ -12,6 +12,14 @@ function CreateFolderPopup({
   selectedColor,
   changeSelectedColor,
 }) {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  });
+
   const [folder, setFolder] = useState({
     name: '',
   });
@@ -31,9 +39,11 @@ function CreateFolderPopup({
     });
   }
 
-  function onKeyDown(e) {
+  function handleKeyDown(e) {
     if (e.code === 'Enter') {
       addFolder();
+    } else if (e.code === 'Escape') {
+      setIsPopupActive(false);
     }
   }
 
@@ -59,7 +69,7 @@ function CreateFolderPopup({
   return (
     <div
       className={`popup ${isPopupActive ? '' : 'popup--hidden'}`}
-      onKeyDown={onKeyDown}>
+      onKeyDown={handleKeyDown}>
       <div className='popup__content'>
         <input
           type='text'
@@ -67,6 +77,7 @@ function CreateFolderPopup({
           className='popup__input'
           placeholder='Название папки'
           onChange={(e) => setFolder({ ...folder, name: e.target.value })}
+          ref={inputRef}
         />
         <div className='popup__colors'>{colorsList}</div>
         <Button
