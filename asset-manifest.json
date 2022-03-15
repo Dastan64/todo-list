@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/todo-list/static/css/main.f2a360b1.css",
+    "main.js": "/todo-list/static/js/main.32a64851.js",
+    "static/media/all-tasks.svg": "/todo-list/static/media/all-tasks.a862c15f565e11d25259ce5cd343b0e6.svg",
+    "static/media/close-popup.svg": "/todo-list/static/media/close-popup.ac7b9278cab353907f42c5983ebc5569.svg",
+    "index.html": "/todo-list/index.html",
+    "static/media/checkbox-checked.svg": "/todo-list/static/media/checkbox-checked.dc8254dacea80acf5262.svg",
+    "static/media/add-task.svg": "/todo-list/static/media/add-task.7cfa1c971b008d03a4c91cfa5937707f.svg",
+    "static/media/checkbox-unchecked.svg": "/todo-list/static/media/checkbox-unchecked.adb9500d84246d8f0374.svg",
+    "main.f2a360b1.css.map": "/todo-list/static/css/main.f2a360b1.css.map",
+    "main.32a64851.js.map": "/todo-list/static/js/main.32a64851.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f2a360b1.css",
+    "static/js/main.32a64851.js"
+  ]
+}
